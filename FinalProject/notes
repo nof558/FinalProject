@@ -1,0 +1,41 @@
+* How to run alexa skills:
+alexa-skill-local
+
+
+how to set static ip to Sonoff configuration:
+https://www.youtube.com/watch?v=UDnNI5wkNNY
+
+//publisher demo. the real one is the sonoff
+// client.on('connect', function () {
+// 	setInterval(function() {
+// 	client.publish('myTopic', 'Hello mqtt');
+// 	console.log('Message Sent');
+// 	}, 5000);
+// });
+//--end publisher demo--
+
+//subscriber demo
+// client.on('connect', function () {
+//     client.subscribe('myTopic')
+//     console.log('client has subscribed successfully');
+// })
+// // 'message' its a built in function
+// client.on('message', function (topic, message) {
+//     context = message.toString();
+//     console.log(context)
+// })
+//--end subscriber demo--
+
+
+// example of data from sonoff S26 with command: "cmnd/sonoff/STATUS 10"
+
+msg from sonoff=> {"Status":{"Module":1,"FriendlyName":["Sonoff"],"Topic":"sonoff","ButtonTopic":"0","Power":1,"PowerOnState":3,"LedState":1,"SaveData":1,"SaveState":1,"SwitchTopic":"0","SwitchMode":[0,0,0,0,0,0,0,0],"ButtonRetain":0,"SwitchRetain":0,"SensorRetain":0,"PowerRetain":1}}
+msg from sonoff=> {"StatusPRM":{"Baudrate":115200,"GroupTopic":"sonoffs","OtaUrl":"http://thehackbox.org/tasmota/release/sonoff.bin","RestartReason":"Software/System restart","Uptime":"0T03:50:51","StartupUTC":"2020-09-24T13:26:47","Sleep":50,"CfgHolder":4617,"BootCount":5,"SaveCount":58,"SaveAddress":"FA000"}}
+msg from sonoff=> {"StatusFWR":{"Version":"6.5.0(release-sonoff)","BuildDateTime":"2019-03-19T12:24:10","Boot":7,"Core":"2_3_0","SDK":"1.5.3(aec24ac9)"}}
+msg from sonoff=> {"StatusLOG":{"SerialLog":2,"WebLog":2,"SysLog":0,"LogHost":"","LogPort":514,"SSId":["Ronen",""],"TelePeriod":3000,"Resolution":"558780C0","SetOption":["00008029","280500000100000000000000000000000000","00000000"]}}
+msg from sonoff=> {"StatusMEM":{"ProgramSize":507,"Free":496,"Heap":14,"ProgramFlashSize":1024,"FlashSize":1024,"FlashChipId":"146085","FlashMode":3,"Features":["00000809","0FDAE394","000783A0","23B617CE","00003BC0"]}}
+msg from sonoff=> {"StatusNET":{"Hostname":"sonoff-7959","IPAddress":"192.168.1.42","Gateway":"192.168.1.1","Subnetmask":"255.255.255.0","DNSServer":"213.57.2.5","Mac":"CC:50:E3:1C:3F:17","Webserver":2,"WifiConfig":4}}
+msg from sonoff=> {"StatusMQT":{"MqttHost":"192.168.1.21","MqttPort":1883,"MqttClientMask":"DVES_%06X","MqttClient":"DVES_1C3F17","MqttUser":"DVES_USER","MqttCount":126,"MAX_PACKET_SIZE":1000,"KEEPALIVE":15}}
+msg from sonoff=> {"StatusTIM":{"UTC":"Thu Sep 24 17:17:38 2020","Local":"Thu Sep 24 18:17:38 2020","StartDST":"Sun Mar 29 02:00:00 2020","EndDST":"Sun Oct 25 03:00:00 2020","Timezone":"+01:00","Sunrise":"06:40","Sunset":"18:43"}}
+msg from sonoff=> {"StatusSNS":{"Time":"2020-09-24T18:17:38"}}
+msg from sonoff=> {"StatusSTS":{"Time":"2020-09-24T18:17:38","Uptime":"0T03:50:51","Vcc":3.156,"SleepMode":"Dynamic","Sleep":50,"LoadAvg":182,"POWER":"ON","Wifi":{"AP":1,"SSId":"Ronen","BSSId":"78:65:59:6D:6C:F6","Channel":11,"RSSI":72,"LinkCount":1,"Downtime":"0T00:00:06"}}}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1 class="title"> Welcome to your Smart Home control center!</h1>
+    </div>
+
+    <div class="switcher">
+        <label class="rocker" >
+        <input type="checkbox" onclick="toggle()">
+        <span class="switch-left">On</span>
+        <span class="switch-right">Off</span>
+        </label>
+    </div>
+
+    <div class="container">
+
+        <button onclick="getDevicesList()" class="myButton">Scan Devices</button>
+        <div class="select" onchange="setDevice(event)">
+            <select id="devices-select"></select>
+        </div>
+
+        <div class="container1">
+            <table border="1" class="actions">
+                <tr>
+                    <td>Up Time</td>
+                    <td id="time" class="stats">N/A</td>
+                    <td></td>
+                    <td> <img src="./images/voice.jpg" class="voice"> How long are you awake?</td>
+                </tr>
+                <tr>
+                    <td>Avg Power Per Activation</td>
+                    <td id="avg-power" class="stats"></td>
+                    <td><button onclick="getAvgPowerPerAct()" class="myButton">Calculate</button></td>
+                    <td> <img src="./images/voice.jpg" class="voice"> What is the average power consumption per activation?</td>
+                </tr>
+                <tr>
+                    <td>Total Power Consume <input id="totalPower-input" size="6" placeholder="Enter Days"></td>
+                    <td id="totalPower" class="stats"></td>
+                    <td><button class="myButton" onclick="getTotalPower()"> Calculate </button></td>
+                    <td> <img src="./images/voice.jpg" class="voice"> How much power you consume {number of days}?</td>
+                </tr>
+                <tr>
+                    <td>Avg Daily Activations <input id="avgDayAct-input" size="6" placeholder="Enter Days"></td>
+                    <td id="avgDayAct" class="stats"></td>
+                    <td><button onclick="getAvgDayAct()" class="myButton"> Calculate </button></td>
+                    <td> <img src="./images/voice.jpg" class="voice"> What is the average day activations {number of days}?</td>
+                </tr>
+                <tr>
+                    <td>Turn On/off Timer</td>
+                    <td id="avgDayAct" class="stats"></td>
+                    <td></td>
+                    <td> <img src="./images/voice.jpg" class="voice"> Turn {action} in {seconds}</td>
+                </tr>
+                <tr>
+                    <td>Command List</td>
+                    <td id="avgDayAct" class="stats"></td>
+                    <td></td>
+                    <td> <img src="./images/voice.jpg" class="voice"> Command list</td>
+                </tr>
+                <tr>
+                    <td>Send Notification <input id="msg-input" size="6" placeholder="Message"></td>
+                    <td>(for testing)</td>
+                    <td><button onclick="sendNotification()" class="myButton"> Send </button></td>
+                    <td> <img src="./images/voice.jpg" class="voice">Read notification. Or just "nofification"</td>
+                </tr>
+                <tr>
+                    <td>Voltage:</td>
+                    <td id="volt">N/A</td>
+                    <td></td>
+                    <td> <img src="./images/voice.jpg" class="voice"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
